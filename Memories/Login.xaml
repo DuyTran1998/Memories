@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Memories.Login"
+             >
+    <ContentPage.Content>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+            <!--<Image Source="bg.jpg" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Aspect="AspectFill"/>-->
+            <Grid AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="0,30,0,10" Grid.Row="0">
+                <Label Text="University of Information Technology" FontFamily="MarkerFelt-Thin" FontAttributes="Italic"/>
+                <Image Source="logo.png" Opacity="0.6" VerticalOptions="Start" Margin="0,10,0,0" WidthRequest="150" HeightRequest="150"/>
+            </StackLayout>
+            <Grid Grid.Row="1" Margin="20,40,20,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Entry x:Name="username" Grid.Row="1" Placeholder="Email or Phone Number" PlaceholderColor="#bababa" FontSize="16" BackgroundColor="Transparent"/>
+                <Entry x:Name="password" Grid.Row="2" Placeholder="Password" PlaceholderColor="#bababa" FontSize="16" IsPassword="True" BackgroundColor="Transparent"/>
+                <Button Grid.Row="3" Text ="Sign In" BackgroundColor="#3897f0" HeightRequest="50" VerticalOptions="Start" TextColor="White"
+                        Clicked="LoginEvent"/>
+                <Label Grid.Row="4" Text="LoginTrouble?GetHelp" Margin="0,10,0,0" HorizontalOptions="Center"/>
+            </Grid>
+            <StackLayout Grid.Row="2">
+                <Label Text="Version 1.0" HorizontalOptions="Center"/>
+            </StackLayout>
+        </Grid>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
