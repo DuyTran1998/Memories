@@ -5,10 +5,18 @@ namespace Memories.Model
     {
         public String username { set; get; }
         public String password { set; get; }
+        public String email { set; get; }
 
-        public Account(String username, String password)
+        public Account(String email, String username, String password)
         {
             this.username = username;
+            this.password = password;
+            this.email = email;
+        }
+
+        public Account(String email, String password)
+        {
+            this.email = email;
             this.password = password;
         }
     }

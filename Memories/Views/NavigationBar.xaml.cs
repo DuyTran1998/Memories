@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace Memories
+namespace Memories.Views
 {
-    public partial class Navigation : TabbedPage
+    public partial class NavigationBar : TabbedPage
     {
-        public Navigation()
+        public NavigationBar()
         {
             InitializeComponent();
         }

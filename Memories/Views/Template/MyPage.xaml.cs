@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace Memories
+namespace Memories.Views.Template
 {
-    public partial class DashBoard : ContentPage
+    public partial class MyPage : ContentPage
     {
-        public DashBoard()
+        public MyPage()
         {
             InitializeComponent();
         }
