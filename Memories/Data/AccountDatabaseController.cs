@@ -34,12 +34,12 @@ namespace Memories.Database
             }
         }
 
-        public IEnumerable<Token> GetToken()
+        public String GetToken()
         { 
             lock (locker)
             {
-                var Token = database.Query<Token>("select * from Token");
-                return Token;
+                var token = database.Query<Token>("select * from Token limit 1");
+                return token[0].token;
             }
         }
 

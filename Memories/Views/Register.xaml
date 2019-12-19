@@ -21,22 +21,22 @@
                            TextColor="White" BackgroundColor="Transparent"/>
           </StackLayout>
         </Frame>
-        <Button Clicked="Submit" Text="SIGN UP" TextColor="White"  
+        <Button Clicked="Submit" Text="Register" TextColor="White"  
                     FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
                     BackgroundColor="#088da5" />
         <Label HorizontalOptions="Center">
           <Label.FormattedText>
             <FormattedString>
-              <Span Text="I an already a member "
+              <Span Text="I am already a member "
                   FontAttributes="Italic"
                   FontSize="18"
                   TextColor="White"/>
-              <Span Text="SIGN IN"
+              <Span Text="LOGIN"
                   TextColor="Cyan"
                   FontAttributes="Bold"
                   FontSize="18">
                 <Span.GestureRecognizers>
-                  <TapGestureRecognizer Tapped="Sign_In"/>
+                  <TapGestureRecognizer Tapped="Login"/>
                 </Span.GestureRecognizers>
               </Span>
             </FormattedString>

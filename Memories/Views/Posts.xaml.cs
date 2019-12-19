@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using Memories.Model;
-using Memories.Network;
-using Memories.Views.Template;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
 using Xamarin.Forms;
@@ -12,15 +9,12 @@ using Xamarin.Forms.Xaml;
 namespace Memories
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DashBoard : ContentPage
+    public partial class Posts : ContentPage
     {
         ObservableCollection<MediaFile> files = new ObservableCollection<MediaFile>();
-        public DashBoard()
+        public Posts()
         {
             InitializeComponent();
-            initDashBoard();
-
-            //Take Photo When Tapping Image;
             var tapGestureRecognizer = new TapGestureRecognizer();
             tapGestureRecognizer.Tapped += async (sender, args) =>
             {
@@ -46,26 +40,38 @@ namespace Memories
 
                 files.Add(file);
             };
+
             takePhoto.GestureRecognizers.Add(tapGestureRecognizer);
-        }
 
-        public async void initDashBoard()
-        {
-            DataService service = new DataService();
-            List<Post> posts = await service.GetPost();
-            if(posts != null)
+            var tappedToPickPhoto = new TapGestureRecognizer();
+            tappedToPickPhoto.Tapped += async (sender, args) =>
             {
-                foreach (Post x in posts)
+                await CrossMedia.Current.Initialize();
+                files.Clear();
+                if (!CrossMedia.Current.IsPickPhotoSupported)
                 {
-                    x.image = Global.IMAGE_POST + x.image;
+                    await DisplayAlert("Photos Not Supported", ":( Permission not granted to photos.", "OK");
+                    return;
                 }
-            }
-            DataModelList.ItemsSource = posts;
-        }
+                var file = await CrossMedia.Current.PickPhotoAsync(new PickMediaOptions
+                {
+                    PhotoSize = PhotoSize.Full,
+                    SaveMetaData = true
+                });
 
-        public void Camera(object sender, EventArgs e)
-        {
-            Application.Current.MainPage = new MyPage();
+
+                if (file == null)
+                    return;
+
+                files.Add(file);
+                Image.Source = file.Path;
+            };
+            pickPhoto.GestureRecognizers.Add(tappedToPickPhoto);
+
+            EditorText.TextChanged += (sender, e) =>
+            {
+                EditorPlaceholder.IsVisible = e.NewTextValue.Length <= 0;
+            };
         }
     }
 }

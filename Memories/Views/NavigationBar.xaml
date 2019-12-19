@@ -10,8 +10,6 @@
 
 </local:Profile>
 
-<local:Camera>
-
-</local:Camera>
-
+<local:Posts>
+</local:Posts>
 </TabbedPage>

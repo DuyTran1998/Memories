@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Memories.Network;
 using Memories.Views;
+using Memories.Model;
 
 namespace Memories
 {
@@ -14,17 +15,17 @@ namespace Memories
         public async void Submit(object sender, EventArgs e)
         {
             DataService service = new DataService();
-            var response = await service.Login(email.Text, password.Text);
-            if (response)
+            ResponseMessage response = await service.Login(email.Text, password.Text);
+            if (response.status)
             {
                 Application.Current.MainPage = new NavigationBar();
             }
             else
             {
-                Application.Current.MainPage.DisplayAlert("ERROR!", "Username or Password is wrong!", "Cancel");
+                await Application.Current.MainPage.DisplayAlert("ERROR!", "Username or Password is wrong!", "Cancel");
             }
         }
-        private void Sign_Up(object sender, EventArgs e)
+        private void Register(object sender, EventArgs e)
         {
             Application.Current.MainPage = new Register();
         }

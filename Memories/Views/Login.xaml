@@ -66,13 +66,13 @@
                                     FontSize="18"
                                     TextColor="White" />
                                 <Span
-                                    Text="SIGN UP"
+                                    Text="REGISTER"
                                     TextColor="Cyan"
                                     FontAttributes="Bold"
                                     FontSize="18">
                                     <Span.GestureRecognizers>
                                         <TapGestureRecognizer
-                                            Tapped="Sign_Up" />
+                                            Tapped="Register" />
                                     </Span.GestureRecognizers>
                                 </Span>
                             </FormattedString>
