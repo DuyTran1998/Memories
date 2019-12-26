@@ -110,12 +110,7 @@ namespace Memories
 
             return posts;
         }
-
-        public void Camera(object sender, EventArgs e)
-        {
-            Application.Current.MainPage = new MyPage();
-            
-        }
+ 
         public void OnItemSelected(object sender, EventArgs e)
         {
             
