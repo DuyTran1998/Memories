@@ -60,12 +60,12 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Data\SQLite_IOS.cs" />
+    <Compile Include="Main.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -154,6 +154,15 @@
     <BundleResource Include="Resources\post.png" />
     <BundleResource Include="Resources\pen.png" />
     <BundleResource Include="Resources\camera.png" />
+    <BundleResource Include="Resources\Dashboard.png" />
+    <BundleResource Include="Resources\Home.png" />
+    <BundleResource Include="Resources\info.png" />
+    <BundleResource Include="Resources\post2.png" />
+    <BundleResource Include="Resources\picture.jpg" />
+    <BundleResource Include="Resources\like-red.png" />
+    <BundleResource Include="Resources\like-white.png" />
+    <BundleResource Include="Resources\photo_library.png" />
+    <BundleResource Include="Resources\photo_camera.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />

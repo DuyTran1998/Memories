@@ -18,7 +18,6 @@
     <Folder Include="Network\" />
     <Folder Include="Service\" />
     <Folder Include="Views\" />
-    <Folder Include="Css\" />
     <Folder Include="Views\Template\" />
     <Folder Include="Data\" />
   </ItemGroup>
@@ -27,11 +26,20 @@
     <Compile Remove="Service\AccountService.cs" />
     <Compile Remove="Model\Event.cs" />
     <Compile Remove="Views\Navigation.xaml.cs" />
+    <Compile Remove="Views\PostItemView.cs" />
+    <Compile Remove="Views\Template\PostItemView.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="Views\Navigation.xaml" />
+    <EmbeddedResource Remove="Views\Template\PostItemView.xaml" />
+    <EmbeddedResource Remove="Css\Register.css" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="EmptyXmlFile.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Xamarin.iOS">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Xamarin.iOS.framework\Versions\13.6.0.12\lib\mono\Xamarin.iOS\Xamarin.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

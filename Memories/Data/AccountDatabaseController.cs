@@ -26,14 +26,20 @@ namespace Memories.Database
                     id = 0,
                     token = token
                 };
-                database.Query<Token>("delete from Token");
-                Console.WriteLine("Delete Token Sussessfull");
+                DeleteToken();
                 database.Insert(item);
                 Console.WriteLine(token);
                 Console.WriteLine("Save New Token");
             }
         }
-
+        public void DeleteToken()
+        {
+            lock (locker)
+             {
+                    database.Query<Token>("delete from Token");
+                    Console.WriteLine("Delete Token Sussessfull");
+             }   
+        }
         public String GetToken()
         { 
             lock (locker)

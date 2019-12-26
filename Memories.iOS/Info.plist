@@ -18,8 +18,6 @@
 	<string>8.0</string>
 	<key>CFBundleDisplayName</key>
 	<string>Memories</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.xamarin.memories</string>
 	<key>UILaunchStoryboardName</key>
 	<string>SplashPage</string>
 	<key>CFBundleName</key>
@@ -47,5 +45,9 @@
 	<string>This app needs access to photos.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>This app needs access to the photo gallery.</string>
+	<key>Custom Property</key>
+	<string></string>
+	<key>CFBundleIdentifier</key>
+	<string>com.xamarin.memories</string>
 </dict>
 </plist>

@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Memories.Views.Template.PostViewCell">
+    <ViewCell.View>
+        <StackLayout>
+            <Frame
+                HasShadow="True">
+                <StackLayout>
+                    <Grid
+                        Margin="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+                                Height="20" />
+                            <RowDefinition
+                                Height="20" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition
+                                Width="auto" />
+                            <ColumnDefinition
+                                Width="5" />
+                            <ColumnDefinition
+                                Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout
+                            Grid.RowSpan="2">
+                            <Frame
+                                CornerRadius="20"
+                                HeightRequest="40"
+                                WidthRequest="40"
+                                HorizontalOptions="Center"
+                                Padding="0"
+                                IsClippedToBounds="True">
+                                <Image
+                                    Source="{Binding user.avatar}"
+                                    Aspect="AspectFill" />
+                            </Frame>
+                        </StackLayout>
+                        <Label
+                            Grid.Column="2"
+                            Text="{Binding user.username}"
+                            FontAttributes="Bold"
+                            FontSize="Medium"
+                            TextColor="Black" />
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Text="{Binding time_created}"
+                            VerticalOptions="Fill"
+                            TextColor="Black"
+                            FontSize="Small"
+                            FontAttributes="Italic" />
+                    </Grid>
+                    <Label
+                        Text="{Binding status}"
+                        FontSize="14"
+                        TextColor="Black" />
+                    <Image
+                        Margin="0"
+                        Source="{Binding image}"
+                        Aspect="Fill"  VerticalOptions="FillAndExpand" HeightRequest="350"/>
+
+                    <Grid Padding="0" Margin="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+                                Height="40"
+                                />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition
+                                Width="40" />
+                            <ColumnDefinition
+                                Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0"
+                            x:Name="numberofLike"
+                            Text="{Binding amount_like }"
+                            TextColor="Black"
+                               Margin="10"/>
+                        <Button Grid.Column="1"
+                            FontAttributes="Bold"
+                            Clicked="Button_Cliked"
+                            CommandParameter="{Binding .}"
+                            x:Name="like_btn"
+                            Text="Like"
+                            TextColor="White"
+                            BackgroundColor="Blue">
+                            <!--<Button.Triggers>
+                                <DataTrigger
+                                    TargetType="Button"
+                                    Binding="{Binding isLiked, Mode=TwoWay}"
+                                    Value="false">
+                                    <Setter
+                                        Property="BackgroundColor"
+                                        Value="#dbe1e5" />
+                                    <Setter
+                                        Property="TextColor"
+                                        Value="#bfcfd5" />
+                                </DataTrigger>
+                                <DataTrigger
+                                    TargetType="Button"
+                                    Binding="{Binding isLiked, Mode=TwoWay}"
+                                    Value="true">
+                                    <Setter
+                                        Property="BackgroundColor"
+                                        Value="Red" />
+                                    <Setter
+                                        Property="TextColor"
+                                        Value="#FFFFFF" />
+                                </DataTrigger>
+                            </Button.Triggers>-->
+                        </Button>
+                    </Grid>
+
+
+
+                    <!--<Button
+                        x:Name="like_btb"
+                        Text="Like"
+                        BackgroundColor="Blue"
+                        HeightRequest="30"
+                        WidthRequest="50"
+                        AbsoluteLayout.LayoutBounds="0,0,70,30"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        Clicked="Button_Cliked"
+                        CommandParameter="{Binding .}"></Button>-->
+
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ViewCell.View>
+</ViewCell>

@@ -56,6 +56,13 @@
                         FontSize="Large"
                         HorizontalOptions="FillAndExpand"
                         BackgroundColor="#088da5" />
+                    <Button Text="Login with Facebook"
+                        Image="fb_icon.png"
+                        TextColor="White"
+                        BackgroundColor="#01579B"
+                        Font="Bold"
+                        FontSize="26"
+                        Clicked="LoginWithFacebook_Clicked"/>
                     <Label
                         HorizontalOptions="Center">
                         <Label.FormattedText>

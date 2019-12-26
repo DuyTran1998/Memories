@@ -1,15 +1,37 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
-            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            xmlns:local="clr-namespace:Memories"
-            x:Class="Memories.Views.NavigationBar">
-<local:DashBoard>
+﻿<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:Memories"
+       x:Class="Memories.Views.NavigationBar"
+       BackgroundColor="#2e4d8e"
+       ForegroundColor="White"
+       TitleColor="White"
+       Shell.NavBarIsVisible="True"
+       UnselectedColor="#95FFFFFF">
 
-</local:DashBoard>
-<local:Profile>
+    <Shell.FlyoutHeader>
+        <ContentView HeightRequest="200">
+            <Image Source="background.jpg"
+                   Aspect="AspectFill" />
+        </ContentView>
+    </Shell.FlyoutHeader>
 
-</local:Profile>
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <!--For the bottom tab-->
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#2e4d8e" />
+                <Setter Property="Shell.BackgroundColor" Value="#2e4d8e" />
+                <Setter Property="Shell.FlyoutBackgroundColor" Value="White"/>
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources> 
 
-<local:Posts>
-</local:Posts>
-</TabbedPage>
+    <FlyoutItem Title="Home" Icon="Home.png" Style="{StaticResource BaseStyle}">
+        <ShellContent Title="DashBoard" Icon="Dashboard.png" ContentTemplate="{DataTemplate local:DashBoard}" />
+        <ShellContent Title="Post" Icon="post2.png" ContentTemplate="{DataTemplate local:Posts}" />
+        <ShellContent Title="Profile" Route="Profile" Icon="info.png" ContentTemplate="{DataTemplate local:Profile}" />
+    </FlyoutItem>
+     <MenuItem Text="Logout"
+          Icon="pen.png"
+          x:Name="logout" />
+</Shell>

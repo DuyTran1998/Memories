@@ -1,50 +1,95 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Memories.Views.Register">
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Memories.Views.Register">
     <ContentPage.Content>
-        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
-            <Image Source="bg.png" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Aspect="AspectFill"/>
-            <Grid AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
-          <StackLayout Orientation="Vertical" Padding="50,220,50,50" Spacing="50">
-        <Frame BackgroundColor="#BF043055" HasShadow="False">
-          <StackLayout Orientation="Vertical" Spacing="10">
-            <Entry x:Name="username" Text="{Binding Username}" Placeholder="Username"   
-                           PlaceholderColor="White" HeightRequest="50"  
-                           Keyboard="Email" FontAttributes="Italic"  
-                           TextColor="White" BackgroundColor="Transparent"/>
-            <Entry x:Name="email" Text="{Binding Email}" Placeholder="Email"   
-                           PlaceholderColor="White" HeightRequest="50"   
-                           FontAttributes="Italic"
-                           TextColor="White" BackgroundColor="Transparent"/>
-            <Entry x:Name="password" Text="{Binding Password}" Placeholder="Password"   
-                           PlaceholderColor="White" HeightRequest="50"   
-                           IsPassword="True" FontAttributes="Italic"
-                           TextColor="White" BackgroundColor="Transparent"/>
-          </StackLayout>
-        </Frame>
-        <Button Clicked="Submit" Text="Register" TextColor="White"  
-                    FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
-                    BackgroundColor="#088da5" />
-        <Label HorizontalOptions="Center">
-          <Label.FormattedText>
-            <FormattedString>
-              <Span Text="I am already a member "
-                  FontAttributes="Italic"
-                  FontSize="18"
-                  TextColor="White"/>
-              <Span Text="LOGIN"
-                  TextColor="Cyan"
-                  FontAttributes="Bold"
-                  FontSize="18">
-                <Span.GestureRecognizers>
-                  <TapGestureRecognizer Tapped="Login"/>
-                </Span.GestureRecognizers>
-              </Span>
-            </FormattedString>
-          </Label.FormattedText>
-        </Label>
+        <AbsoluteLayout
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            BackgroundColor="White">
+            <Image
+                Source="bg.png"
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                Aspect="AspectFill" />
+            <Grid
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All">
+                <StackLayout
+                    Orientation="Vertical"
+                    Padding="50,220,50,50"
+                    Spacing="50">
+                    <Frame
+                        BackgroundColor="#BF043055"
+                        HasShadow="False">
+                        <StackLayout
+                            Orientation="Vertical"
+                            Spacing="10">
+                            <Entry
+                                x:Name="username"
+                                Text="{Binding Username}"
+                                Placeholder="Username"
+                                PlaceholderColor="White"
+                                HeightRequest="50"
+                                FontAttributes="Italic"
+                                TextColor="White"
+                                BackgroundColor="Transparent" />
+                            <Entry
+                                x:Name="email"
+                                Text="{Binding Email}"
+                                Placeholder="Email"
+                                PlaceholderColor="White"
+                                HeightRequest="50"
+                                FontAttributes="Italic"
+                                TextColor="White"
+                                Keyboard="Email"
+                                BackgroundColor="Transparent" />
+                            <Entry
+                                x:Name="password"
+                                Text="{Binding Password}"
+                                Placeholder="Password"
+                                PlaceholderColor="White"
+                                HeightRequest="50"
+                                IsPassword="True"
+                                FontAttributes="Italic"
+                                TextColor="White"
+                                BackgroundColor="Transparent"/>
+                        </StackLayout>
+                    </Frame>
+                    <Button
+                        Clicked="Submit"
+                        Text="Register"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="Large"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="#088da5" />
+                    <Label
+                        HorizontalOptions="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span
+                                    Text="I am already a member "
+                                    FontAttributes="Italic"
+                                    FontSize="18"
+                                    TextColor="White" />
+                                <Span
+                                    Text="LOGIN"
+                                    TextColor="Cyan"
+                                    FontAttributes="Bold"
+                                    FontSize="18">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="Login" />
+                                    </Span.GestureRecognizers>
+                                </Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
 
-      </StackLayout>
-        </Grid>
+                </StackLayout>
+            </Grid>
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

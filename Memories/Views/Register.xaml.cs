@@ -30,7 +30,7 @@ namespace Memories.Views
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert("ERROR!", response.message, "Cancel");
+                await Application.Current.MainPage.DisplayAlert("ERROR!", response.message,null, "Cancel");
             }
         }
     }

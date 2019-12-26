@@ -5,46 +5,53 @@
     x:Class="Memories.Posts"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
 			 ios:Page.UseSafeArea="True"
-    Title="Post">
+    Title="Post"
+    BackgroundColor="#E4E1E6">
     <ContentPage.Content>
 		<Grid Padding="0" RowSpacing="0" ColumnSpacing="0">
 			<Grid.RowDefinitions>
-                <RowDefinition Height="60" />
-                <RowDefinition Height="50" />
 				<RowDefinition Height="*" />
-				<RowDefinition Height="100" />
+				<RowDefinition Height="50" />
 			</Grid.RowDefinitions>
-            <StackLayout Grid.Row="0" VerticalOptions="FillAndExpand" BackgroundColor="Aquamarine" Margin="0,-20,0,0">
-                <Label Text="Memories" HorizontalTextAlignment="Center" Margin="0,32,0,0"></Label>
-            </StackLayout>
-            <StackLayout Grid.Row="1" VerticalOptions="FillAndExpand" BackgroundColor="Bisque">
-                <Label Text="DUY" HorizontalTextAlignment="Center" Margin="0,20,0,0"></Label>
-            </StackLayout>
-            <Grid Grid.Row="2">
+            <Grid Grid.Row="0" Margin="0,0,0,0">
                 <Grid.RowDefinitions>
-				    <RowDefinition Height="150" />
+				    <RowDefinition Height="170" />
+                    <RowDefinition Height="40"/>
 				    <RowDefinition Height="Auto" />
 			    </Grid.RowDefinitions>
-                <Editor x:Name="EditorText" Grid.Row="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White" Margin="0,5,0,5" />
-				<Label x:Name="EditorPlaceholder" Grid.Row="0" Text="Enter a comment..." TextColor="Black" Margin="10,16,0,0" FontSize="16"></Label>
-                <ScrollView Grid.Row="1">
-                    <Image x:Name="Image"  HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" HeightRequest="250" BackgroundColor="White" />
+                <Frame Grid.Row="0" Margin="5" HasShadow="False">
+                    <Editor x:Name="EditorText"  VerticalOptions="FillAndExpand"
+                            HorizontalOptions="FillAndExpand"
+                            Margin="0,5,10,5"
+                            TextChanged="TurnOffPlaceholder"
+                            />
+                </Frame>
+				<Label x:Name="EditorPlaceholder"
+           Grid.Row="0"
+           Text="Write status, save your memmories..."
+           TextColor="Black"
+           Margin="30,30,70,120"
+           FontSize="16"
+           FontAttributes="Italic"></Label>
+                <FlexLayout Grid.Row="1" Direction="Row" AlignItems="Start" Margin="0,6,0,0"
+                        JustifyContent="SpaceEvenly">
+                        <Image Source="photo_camera.png" x:Name="takePhoto" />
+                        <Image Source="photo_library.png" x:Name="pickPhoto"/>
+                </FlexLayout>
+                <ScrollView Grid.Row="2" Margin="5,5,5,5">
+                    <Frame CornerRadius="10">
+                        <Image x:Name="Image" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" HeightRequest="250" BackgroundColor="White" Margin="10"/>
+                    </Frame>  
                 </ScrollView>
             </Grid>
-            <Grid Grid.Row="3" BackgroundColor="AntiqueWhite">
+            <Grid Grid.Row="1" Margin="0">
                 <Grid.RowDefinitions>
-				    <RowDefinition Height="50" />
-				    <RowDefinition Height="20" />
+				    <RowDefinition Height="45" />
 			    </Grid.RowDefinitions>
-                <FlexLayout Grid.Row="0" Direction="Row" AlignItems="Start"
+                <FlexLayout Grid.Row="0" Direction="Row" AlignItems="Center"
                         JustifyContent="SpaceEvenly">
-                    <Image Source="post.png" x:Name="takePhoto"/>
-                    <Image Source="post.png" x:Name="pickPhoto"/>
-                </FlexLayout>
-                <FlexLayout Grid.Row="1" Direction="Row" AlignItems="Center"
-                        JustifyContent="SpaceEvenly">
-                    <Button Text="Cancle" BackgroundColor="Blue" WidthRequest="100" TextColor="Aquamarine"></Button>
-                    <Button Text="Post" BackgroundColor="Blue" WidthRequest="100" TextColor="Aquamarine"></Button>
+                    <Button x:Name="cancel" Text="Cancel" BackgroundColor="#2e4d8e" WidthRequest="100" TextColor="White"></Button>
+                    <Button x:Name="post" Text ="Post" BackgroundColor="#2e4d8e" WidthRequest="100" TextColor="White"></Button>
                 </FlexLayout>
             </Grid>
 		</Grid>

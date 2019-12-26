@@ -1,6 +1,7 @@
 ﻿using System;
 using Memories.Database;
 using Memories.Views;
+using Memories.Views.Template;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -24,16 +25,16 @@ namespace Memories
         public App()
         {
             InitializeComponent();
-            MainPage = new Login();
-            //var remember = App.Database.CheckExistToken();
-            //if (remember)
-            //{
-            //    MainPage = new NavigationBar();
-            //}
-            //else
-            //{
-            //    MainPage = new Login();
-            //}
+            //MainPage = new Login();
+            var remember = App.Database.CheckExistToken();
+            if (remember)
+            {
+                MainPage = new NavigationBar();
+            }
+            else
+            {
+                MainPage = new Login();
+            }
 
         }
 
